@@ -1,0 +1,954 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MZ CREATIONS | Digital Marketing Agency</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #07111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 8%;
+
+            background: rgba(7, 17, 31, 0.96);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 8%;
+
+            background:
+                radial-gradient(circle at 50% 0%, #123b5c 0%, #07111f 55%);
+        }
+
+        .hero-content {
+            max-width: 1000px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border: 1px solid #00d9ff;
+            border-radius: 50px;
+
+            color: #00d9ff;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero p {
+            max-width: 780px;
+
+            margin: auto;
+
+            color: #b8c6d4;
+
+            font-size: 19px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00d9ff;
+            color: #06101c;
+        }
+
+        .primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,217,255,0.25);
+        }
+
+        .secondary {
+            border: 1px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .secondary:hover {
+            background: #00d9ff;
+            color: #06101c;
+        }
+
+        /* STATS */
+
+        .stats {
+            max-width: 1000px;
+
+            margin: -40px auto 0;
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            padding: 0 8%;
+        }
+
+        .stat {
+            text-align: center;
+
+            padding: 25px;
+
+            background: #0c1b2c;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+        }
+
+        .stat h2 {
+            color: #00d9ff;
+
+            font-size: 32px;
+        }
+
+        .stat p {
+            color: #9eacbb;
+
+            font-size: 14px;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #00d9ff;
+        }
+
+        .section-title p {
+            color: #9eacbb;
+        }
+
+        /* SERVICES */
+
+        .services {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .service {
+            background: #0c1b2c;
+
+            padding: 32px;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+
+            border-color: #00d9ff;
+
+            box-shadow: 0 15px 40px rgba(0,217,255,0.1);
+        }
+
+        .icon {
+            font-size: 38px;
+
+            margin-bottom: 18px;
+        }
+
+        .service h3 {
+            color: #00d9ff;
+
+            margin-bottom: 10px;
+
+            font-size: 22px;
+        }
+
+        .service p {
+            color: #aebdcc;
+
+            font-size: 15px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 43px;
+
+            margin-bottom: 20px;
+        }
+
+        .about h2 span {
+            color: #00d9ff;
+        }
+
+        .about p {
+            color: #aebdcc;
+
+            margin-bottom: 18px;
+        }
+
+        .points {
+            margin-top: 25px;
+        }
+
+        .point {
+            margin: 12px 0;
+
+            color: #dbe5ee;
+        }
+
+        .point span {
+            color: #00d9ff;
+
+            margin-right: 10px;
+
+            font-weight: bold;
+        }
+
+        .about-box {
+            padding: 45px;
+
+            background: linear-gradient(145deg,#102b42,#081522);
+
+            border-radius: 25px;
+
+            border: 1px solid #1a4b68;
+
+            text-align: center;
+        }
+
+        .about-box .mz {
+            font-size: 90px;
+
+            font-weight: bold;
+
+            color: #00d9ff;
+        }
+
+        .about-box h3 {
+            font-size: 28px;
+        }
+
+        .about-box p {
+            margin-top: 10px;
+        }
+
+        /* WHY US */
+
+        .why {
+            background: #081522;
+        }
+
+        .why-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 30px;
+
+            background: #0c1b2c;
+
+            border-radius: 16px;
+
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .why-card h3 {
+            color: #00d9ff;
+
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #aebdcc;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+
+            padding: 110px 8%;
+
+            background:
+                linear-gradient(135deg,#08253b,#07111f);
+        }
+
+        .cta h2 {
+            font-size: 46px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta h2 span {
+            color: #00d9ff;
+        }
+
+        .cta p {
+            color: #aebdcc;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 35px 8%;
+
+            background: #050c15;
+
+            text-align: center;
+
+            color: #7e8b98;
+        }
+
+        .footer-logo {
+            color: #00d9ff;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 900px) {
+
+            .services {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                margin-top: 20px;
+            }
+
+            .section-title h2,
+            .about h2,
+            .cta h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        MZ <span>CREATIONS</span>
+    </div>
+
+    <ul>
+
+       <nav>
+    <div class="logo">
+        MZ <span>CREATIONS</span>
+    </div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+</nav>
+
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            DIGITAL MARKETING • SEO • AI • SOCIAL MEDIA
+        </div>
+
+        <h1>
+            Grow Your Brand.
+            <br>
+            <span>Grow Your Business.</span>
+        </h1>
+
+        <p>
+            MZ CREATIONS is a modern digital marketing brand helping
+            businesses build a powerful online presence through SEO,
+            social media, content marketing, AI and performance marketing.
+        </p>
+
+        <div class="buttons">
+
+            <a href="services.html" class="btn primary">
+                Explore Our Skills
+            </a>
+
+            <a href="#contact" class="btn secondary">
+                Start a Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat">
+
+        <h2>SEO</h2>
+
+        <p>
+            Search Visibility
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h2>GEO</h2>
+
+        <p>
+            AI Search Optimization
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h2>AI</h2>
+
+        <p>
+            Smarter Marketing
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            What We <span>Do</span>
+        </h2>
+
+        <p>
+            Complete digital marketing solutions for modern businesses.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="service">
+
+            <div class="icon">🔍</div>
+
+            <h3>SEO</h3>
+
+            <p>
+                Improve your search visibility and attract
+                customers through strategic Search Engine Optimization.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🌐</div>
+
+            <h3>GEO & AEO</h3>
+
+            <p>
+                Prepare your brand for AI-powered search and
+                answer engines with modern content strategies.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">📱</div>
+
+            <h3>Social Media</h3>
+
+            <p>
+                Build your audience through Instagram, Facebook,
+                reels, creative content and social campaigns.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">✍️</div>
+
+            <h3>Content Marketing</h3>
+
+            <p>
+                Create valuable blogs, captions, videos,
+                website content and marketing campaigns.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">📈</div>
+
+            <h3>Performance Marketing</h3>
+
+            <p>
+                Data-driven advertising campaigns designed
+                to generate leads, reach and conversions.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="icon">🤖</div>
+
+            <h3>AI Marketing</h3>
+
+            <p>
+                Use modern AI tools to improve research,
+                content creation, automation and marketing workflows.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div>
+
+            <h2>
+                Welcome to
+                <span>MZ CREATIONS</span>
+            </h2>
+
+            <p>
+                We believe every business deserves a strong digital
+                presence.
+            </p>
+
+            <p>
+                Our goal is simple: help businesses become more
+                visible, attract the right audience and turn digital
+                attention into real business growth.
+            </p>
+
+
+            <div class="points">
+
+                <div class="point">
+                    <span>✓</span>
+                    Modern digital marketing strategies
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    SEO & AI-search focused approach
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    Creative social media marketing
+                </div>
+
+                <div class="point">
+                    <span>✓</span>
+                    Data-driven growth strategies
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <div class="mz">
+                MZ
+            </div>
+
+            <h3>
+                CREATIONS
+            </h3>
+
+            <p>
+                Digital Marketing • Creativity • Growth
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="why">
+
+    <div class="section-title">
+
+        <h2>
+            Why Choose <span>MZ CREATIONS?</span>
+        </h2>
+
+        <p>
+            We combine creativity, technology and strategy.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <h3>
+                🚀 Modern Approach
+            </h3>
+
+            <p>
+                We use modern SEO, GEO, AEO, AI and social media
+                strategies to keep your brand ready for the future.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                🎯 Audience Focused
+            </h3>
+
+            <p>
+                Every strategy starts with understanding your
+                audience and what they actually need.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                📊 Data Driven
+            </h3>
+
+            <p>
+                We use analytics and performance data to understand
+                what is working and where improvements are needed.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                💡 Creative Thinking
+            </h3>
+
+            <p>
+                From social media content to campaigns, we combine
+                creativity with marketing strategy.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+    <h2>
+        Let's Build Your
+        <span>Digital Future.</span>
+    </h2>
+
+    <p>
+        Ready to improve your online presence?
+        Let's discuss your business and create a digital growth strategy.
+    </p>
+
+    <div class="buttons">
+
+        <a
+            href="mailto:YOUR-EMAIL@example.com"
+            class="btn primary">
+            Contact MZ CREATIONS
+        </a>
+
+        <a
+            href="services.html"
+            class="btn secondary">
+            View Our Skills
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        MZ CREATIONS
+    </div>
+
+    <p>
+        Digital Marketing • SEO • GEO • AEO • Social Media • AI
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 MZ CREATIONS. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+</body>
+</html><nav>
+    <div class="logo">
+        MZ <span>CREATIONS</span>
+    </div>
+
+    
+```

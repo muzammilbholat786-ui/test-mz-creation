@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | MZ CREATIONS</title>
+
+```
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #222;
+        background: #f5f7fa;
+    }
+
+    /* NAVIGATION */
+    nav {
+        background: #111827;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #38bdf8;
+    }
+
+    nav a.active {
+        color: #38bdf8;
+    }
+
+    /* HERO */
+    .page-hero {
+        padding: 80px 8% 60px;
+        text-align: center;
+        background: linear-gradient(135deg, #111827, #2563eb);
+        color: white;
+    }
+
+    .page-hero h1 {
+        font-size: 46px;
+        margin-bottom: 15px;
+    }
+
+    .page-hero p {
+        font-size: 18px;
+        max-width: 700px;
+        margin: auto;
+        opacity: .92;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #38bdf8;
+        color: #111827;
+        padding: 14px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 25px;
+    }
+
+    .btn:hover {
+        background: white;
+    }
+
+    /* SECTIONS */
+    section {
+        padding: 70px 8%;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .section-title p {
+        color: #666;
+    }
+
+    /* SERVICES */
+    .service-detail {
+        background: white;
+        border-radius: 14px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,.06);
+
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .service-detail .icon {
+        font-size: 48px;
+    }
+
+    .service-detail h3 {
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: #111827;
+    }
+
+    .service-detail p.desc {
+        color: #555;
+        margin-bottom: 16px;
+    }
+
+    .service-detail ul {
+        list-style: none;
+    }
+
+    .service-detail li {
+        padding: 6px 0;
+        color: #333;
+    }
+
+    .service-detail li::before {
+        content: "✓  ";
+        color: #2563eb;
+        font-weight: bold;
+    }
+
+    /* PROCESS */
+    .process {
+        background: white;
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .step {
+        background: #f5f7fa;
+        border-radius: 12px;
+        padding: 25px;
+    }
+
+    .step .num {
+        font-size: 30px;
+        font-weight: bold;
+        color: #38bdf8;
+        margin-bottom: 8px;
+    }
+
+    .step h4 {
+        margin-bottom: 6px;
+        color: #111827;
+    }
+
+    .step p {
+        color: #666;
+        font-size: 15px;
+    }
+
+    /* CTA */
+    .cta-band {
+        background: #111827;
+        color: white;
+        text-align: center;
+    }
+
+    .cta-band .section-title p {
+        color: white;
+        opacity: .9;
+    }
+
+    /* FOOTER */
+    footer {
+        background: #030712;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+        nav {
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 18px 5%;
+        }
+
+        nav a {
+            font-size: 14px;
+        }
+
+        .page-hero h1 {
+            font-size: 32px;
+        }
+
+        .service-detail {
+            grid-template-columns: 1fr;
+        }
+
+        .steps {
+            grid-template-columns: 1fr;
+        }
+
+        section {
+            padding: 50px 5%;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVIGATION -->
+<nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="service.html" class="active">Service</a>
+    <a href="portfolio.html">Portfolio</a>
+</nav>
+
+
+<!-- HERO -->
+<section class="page-hero">
+
+    <h1>Services Built to Grow Your Business</h1>
+
+    <p>
+        A closer look at what MZ CREATIONS delivers —
+        from social media growth to complete website development.
+    </p>
+
+    <a href="homepage.html#contact" class="btn">
+        Start a Project
+    </a>
+
+</section>
+
+
+<!-- SERVICES -->
+<section>
+
+    <div class="section-title">
+        <h2>What I Offer</h2>
+
+        <p>
+            Professional digital solutions tailored to your
+            business goals.
+        </p>
+    </div>
+
+
+    <!-- SOCIAL MEDIA -->
+    <div class="service-detail">
+
+        <div class="icon">📱</div>
+
+        <div>
+
+            <h3>Social Media Marketing</h3>
+
+            <p class="desc">
+                End-to-end management of your Instagram and
+                Facebook presence designed to build your brand
+                and grow your audience.
+            </p>
+
+            <ul>
+                <li>Content calendar and posting strategy</li>
+                <li>Reels, carousels and story content</li>
+                <li>Community engagement</li>
+                <li>Follower growth strategy</li>
+                <li>Monthly performance reporting</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEO -->
+    <div class="service-detail">
+
+        <div class="icon">🔍</div>
+
+        <div>
+
+            <h3>SEO</h3>
+
+            <p class="desc">
+                Search engine optimization strategies designed
+                to improve your website visibility and attract
+                potential customers.
+            </p>
+
+            <ul>
+                <li>Keyword research</li>
+                <li>On-page SEO optimization</li>
+                <li>Technical SEO audits</li>
+                <li>Google Business Profile optimization</li>
+                <li>Traffic and ranking tracking</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- WEBSITE -->
+    <div class="service-detail">
+
+        <div class="icon">🌐</div>
+
+        <div>
+
+            <h3>Website Development</h3>
+
+            <p class="desc">
+                Modern, responsive websites designed to make
+                your business look professional and convert
+                visitors into customers.
+            </p>
+
+            <ul>
+                <li>Custom website design</li>
+                <li>Mobile responsive layout</li>
+                <li>Contact forms</li>
+                <li>WhatsApp integration</li>
+                <li>Basic SEO setup</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENT -->
+    <div class="service-detail">
+
+        <div class="icon">🎨</div>
+
+        <div>
+
+            <h3>Content Creation</h3>
+
+            <p class="desc">
+                Engaging visual content and copy created to
+                capture attention and strengthen your brand.
+            </p>
+
+            <ul>
+                <li>Instagram posts</li>
+                <li>Reels editing</li>
+                <li>Stories and carousel designs</li>
+                <li>Caption writing</li>
+                <li>Hashtag strategy</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- DIGITAL MARKETING -->
+    <div class="service-detail">
+
+        <div class="icon">📊</div>
+
+        <div>
+
+            <h3>Digital Marketing Strategy</h3>
+
+            <p class="desc">
+                A complete digital marketing strategy that
+                connects your social media, website, SEO and
+                advertising efforts.
+            </p>
+
+            <ul>
+                <li>Market research</li>
+                <li>Competitor research</li>
+                <li>Campaign planning</li>
+                <li>Audience targeting</li>
+                <li>Performance optimization</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI -->
+    <div class="service-detail">
+
+        <div class="icon">🤖</div>
+
+        <div>
+
+            <h3>AI Solutions</h3>
+
+            <p class="desc">
+                Smart AI-powered solutions that help businesses
+                save time, automate repetitive tasks and improve
+                productivity.
+            </p>
+
+            <ul>
+                <li>AI content creation</li>
+                <li>AI marketing workflows</li>
+                <li>Chatbot setup</li>
+                <li>Marketing automation</li>
+                <li>AI tool consultation</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+<section class="process">
+
+    <div class="section-title">
+
+        <h2>How We'll Work Together</h2>
+
+        <p>
+            A simple process from the first conversation
+            to long-term growth.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="num">01</div>
+
+            <h4>Discovery Call</h4>
+
+            <p>
+                We understand your business, goals,
+                audience and current challenges.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">02</div>
+
+            <h4>Plan & Proposal</h4>
+
+            <p>
+                You receive a clear strategy with
+                deliverables, timeline and pricing.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">03</div>
+
+            <h4>Execution</h4>
+
+            <p>
+                I create, build, optimize and manage
+                your digital presence.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="num">04</div>
+
+            <h4>Growth & Reporting</h4>
+
+            <p>
+                Performance is tracked and strategies
+                are improved based on results.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta-band">
+
+    <div class="section-title">
+
+        <h2 style="color:white;">
+            Ready to Grow Your Business?
+        </h2>
+
+        <p>
+            Let's discuss how MZ CREATIONS can help
+            your business grow online.
+        </p>
+
+    </div>
+
+    <a href="homepage.html#contact" class="btn">
+        Get In Touch
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 MZ CREATIONS. All Rights Reserved.
+    </p>
+
+    <p>
+        Digital Marketing • SEO • Websites • Content Creation
+    </p>
+
+</footer>
+```
+
+</body>
+</html>

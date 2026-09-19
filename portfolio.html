@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | MZ CREATIONS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+    :root{
+        --navy:#0B1120;
+        --navy-light:#111827;
+        --blue:#2563eb;
+        --sky:#38bdf8;
+        --ink:#1e293b;
+        --muted:#64748b;
+        --bg:#f4f6fb;
+        --card:#ffffff;
+        --line:#e6e9f2;
+        --good:#16a34a;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    body{font-family:'Inter',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;}
+    h1,h2,h3,h4{font-family:'Sora','Inter',Arial,sans-serif;}
+
+    nav{background:var(--navy);color:#fff;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:1000;}
+    nav h2{font-size:22px;letter-spacing:.3px;}
+    nav h2 a{color:#fff;text-decoration:none;}
+    nav ul{display:flex;list-style:none;gap:28px;}
+    nav a{color:#cbd5e1;text-decoration:none;font-weight:600;font-size:15px;}
+    nav a:hover{color:var(--sky);}
+    nav a.active{color:var(--sky);}
+
+    .hero{background:radial-gradient(1200px 500px at 15% -10%, #1d4ed8 0%, transparent 60%),
+                linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 55%, #14213d 100%);
+        color:#fff;padding:90px 8% 60px;}
+    .hero-inner{max-width:760px;}
+    .eyebrow{color:var(--sky);font-weight:600;font-size:15px;margin-bottom:14px;}
+    .hero h1{font-size:52px;line-height:1.12;margin-bottom:18px;}
+    .hero p{font-size:18px;color:#cbd5e1;max-width:600px;}
+
+    .stat-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);
+        border-radius:14px;overflow:hidden;margin-top:50px;max-width:900px;}
+    .stat{background:rgba(255,255,255,.04);padding:24px 20px;}
+    .stat .num{font-size:32px;font-weight:800;color:#fff;font-family:'Sora',sans-serif;}
+    .stat .label{font-size:13.5px;color:#a8b3c7;margin-top:4px;}
+
+    .filters{padding:50px 8% 0;}
+    .filters-inner{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+    .filter-btn{border:1.5px solid var(--line);background:#fff;color:var(--muted);padding:10px 20px;
+        border-radius:30px;font-weight:600;font-size:14.5px;cursor:pointer;transition:.2s;}
+    .filter-btn:hover{border-color:var(--blue);color:var(--blue);}
+    .filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+    .work{padding:45px 8% 90px;}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+        transition:.25s ease; display:flex;flex-direction:column;}
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,23,42,.09);border-color:transparent;}
+    .card-top{height:8px;}
+    .card-body{padding:26px 26px 24px;flex:1;display:flex;flex-direction:column;}
+    .tag-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+    .tag{font-size:12px;font-weight:700;letter-spacing:.3px;padding:5px 12px;border-radius:20px;}
+    .duration{font-size:12.5px;color:var(--muted);}
+    .card h3{font-size:20px;margin-bottom:4px;color:var(--navy);}
+    .client{font-size:13.5px;color:var(--muted);margin-bottom:14px;}
+    .card p.challenge{font-size:14.5px;color:#475569;margin-bottom:16px;}
+    .results{display:flex;gap:18px;margin-top:auto;padding-top:16px;border-top:1px dashed var(--line);}
+    .result-item .num{font-size:20px;font-weight:800;color:var(--navy);font-family:'Sora',sans-serif;}
+    .result-item .num span{color:var(--good);}
+    .result-item .label{font-size:12px;color:var(--muted);margin-top:2px;}
+
+    .c-social .card-top{background:#2563eb;} .c-social .tag{background:#eaf1ff;color:#2563eb;}
+    .c-seo .card-top{background:#0ea5e9;} .c-seo .tag{background:#e6f7ff;color:#0284c7;}
+    .c-web .card-top{background:#111827;} .c-web .tag{background:#eef1f5;color:#111827;}
+    .c-content .card-top{background:#7c3aed;} .c-content .tag{background:#f2ebfe;color:#7c3aed;}
+    .c-digital .card-top{background:#f97316;} .c-digital .tag{background:#fff1e6;color:#c2410c;}
+    .c-ai .card-top{background:#059669;} .c-ai .tag{background:#e6f9f1;color:#047857;}
+
+    .testimonials{background:#fff;padding:80px 8%;border-top:1px solid var(--line);}
+    .section-head{text-align:center;max-width:600px;margin:0 auto 46px;}
+    .section-head h2{font-size:32px;color:var(--navy);margin-bottom:10px;}
+    .section-head p{color:var(--muted);font-size:16px;}
+    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .t-card{background:var(--bg);border-radius:14px;padding:28px;border:1px solid var(--line);}
+    .stars{color:#f59e0b;font-size:14px;margin-bottom:14px;}
+    .t-card p{font-size:15px;color:#334155;margin-bottom:20px;}
+    .t-who{display:flex;align-items:center;gap:12px;}
+    .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--sky));
+        display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;}
+    .t-who .name{font-weight:700;font-size:14.5px;color:var(--navy);}
+    .t-who .role{font-size:13px;color:var(--muted);}
+
+    .cta{background:linear-gradient(135deg, var(--navy) 0%, #14213d 100%);color:#fff;padding:80px 8%;text-align:center;}
+    .cta h2{font-size:34px;margin-bottom:12px;}
+    .cta p{color:#cbd5e1;margin-bottom:30px;font-size:16.5px;}
+    .btn{display:inline-block;background:var(--sky);color:var(--navy);padding:15px 32px;border-radius:9px;
+        text-decoration:none;font-weight:700;margin:0 6px;transition:.2s;}
+    .btn:hover{background:#fff;transform:translateY(-2px);}
+    .btn-outline{display:inline-block;border:1.5px solid rgba(255,255,255,.35);color:#fff;padding:13.5px 30px;
+        border-radius:9px;text-decoration:none;font-weight:700;margin:0 6px;}
+    .btn-outline:hover{border-color:#fff;}
+
+    footer{background:var(--navy);color:#94a3b8;text-align:center;padding:26px;font-size:14px;border-top:1px solid rgba(255,255,255,.08);}
+
+    @media (max-width: 980px){
+        .grid{grid-template-columns:repeat(2,1fr);}
+        .t-grid{grid-template-columns:1fr;}
+        .stat-bar{grid-template-columns:repeat(2,1fr);}
+    }
+    @media (max-width: 700px){
+        nav{flex-direction:column;gap:14px;}
+        nav ul{flex-wrap:wrap;justify-content:center;gap:14px;}
+        .hero h1{font-size:34px;}
+        .grid{grid-template-columns:1fr;}
+        .filters-inner{gap:8px;}
+        .filter-btn{padding:8px 14px;font-size:13.5px;}
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <h2><a href="index.html">MZ CREATIONS</a></h2>
+    <ul>
+       <nav>
+    <div class="logo">
+        MZ <span>CREATIONS</span>
+    </div>
+
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+</nav>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="eyebrow">PORTFOLIO</div>
+        <h1>Work that turned strategy into measurable growth</h1>
+        <p>A selection of social media, SEO, website and campaign projects — with the numbers behind them.</p>
+    </div>
+    <div class="stat-bar">
+        <div class="stat"><div class="num">30+</div><div class="label">Projects delivered</div></div>
+        <div class="stat"><div class="num">18</div><div class="label">Businesses served</div></div>
+        <div class="stat"><div class="num">4.2M+</div><div class="label">Content impressions</div></div>
+        <div class="stat"><div class="num">96%</div><div class="label">Client retention</div></div>
+    </div>
+</section>
+
+<section class="filters">
+    <div class="filters-inner" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="seo">SEO</button>
+        <button class="filter-btn" data-filter="web">Websites</button>
+        <button class="filter-btn" data-filter="content">Content</button>
+        <button class="filter-btn" data-filter="digital">Campaigns</button>
+        <button class="filter-btn" data-filter="ai">AI Solutions</button>
+    </div>
+</section>
+
+<section class="work">
+    <div class="grid" id="grid">
+
+        <div class="card c-social" data-cat="social">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">Social Media</span><span class="duration">4 months</span></div>
+                <h3>Instagram Growth for a Local Cafe Chain</h3>
+                <div class="client">Food & Beverage · 3-location retailer</div>
+                <p class="challenge">Inconsistent posting and low engagement were holding back a growing cafe brand's local reach. Rebuilt the content system around reels, community tags, and a weekly posting calendar.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>+212%</span></div><div class="label">Follower growth</div></div>
+                    <div class="result-item"><div class="num"><span>4.6x</span></div><div class="label">Engagement rate</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card c-seo" data-cat="seo">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">SEO</span><span class="duration">6 months</span></div>
+                <h3>Local Search Overhaul for a Boutique Retailer</h3>
+                <div class="client">Retail · Independent store</div>
+                <p class="challenge">The store was invisible on Google for its own product categories. Fixed technical issues, rewrote page content around real search terms, and optimized the Google Business Profile.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>#1-3</span></div><div class="label">for 14 keywords</div></div>
+                    <div class="result-item"><div class="num"><span>+168%</span></div><div class="label">Organic traffic</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card c-web" data-cat="web">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">Website</span><span class="duration">3 weeks</span></div>
+                <h3>Booking-Ready Website for a Service Business</h3>
+                <div class="client">Home Services · Local provider</div>
+                <p class="challenge">No website meant every lead came from word of mouth. Designed and shipped a fast, mobile-first site with a lead form and WhatsApp booking built in.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>1.8s</span></div><div class="label">Load time</div></div>
+                    <div class="result-item"><div class="num"><span>+35</span></div><div class="label">Leads / month</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card c-content" data-cat="content">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">Content</span><span class="duration">Ongoing</span></div>
+                <h3>Brand Story Reel Series for a D2C Launch</h3>
+                <div class="client">Consumer Goods · New brand launch</div>
+                <p class="challenge">A new brand needed to build awareness fast on a limited budget. Produced a 12-part short-form video series introducing the founders, product and process.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>1.1M+</span></div><div class="label">Total views</div></div>
+                    <div class="result-item"><div class="num"><span>9,400</span></div><div class="label">New followers</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card c-digital" data-cat="digital">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">Campaign</span><span class="duration">6 weeks</span></div>
+                <h3>Multi-Channel Launch Campaign</h3>
+                <div class="client">E-commerce · Product launch</div>
+                <p class="challenge">Coordinated social, search and email around a single product launch window instead of running channels separately, aligning messaging and timing across all three.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>+41%</span></div><div class="label">Leads vs. target</div></div>
+                    <div class="result-item"><div class="num"><span>3.1x</span></div><div class="label">Return on ad spend</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card c-ai" data-cat="ai">
+            <div class="card-top"></div>
+            <div class="card-body">
+                <div class="tag-row"><span class="tag">AI Solutions</span><span class="duration">2 weeks</span></div>
+                <h3>AI Chatbot for Customer Query Handling</h3>
+                <div class="client">Retail · Customer support</div>
+                <p class="challenge">The team was answering the same product and shipping questions manually all day. Set up an AI-assisted chatbot trained on FAQs and order policies to handle first response.</p>
+                <div class="results">
+                    <div class="result-item"><div class="num"><span>-70%</span></div><div class="label">Response time</div></div>
+                    <div class="result-item"><div class="num"><span>85%</span></div><div class="label">Queries auto-resolved</div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="section-head">
+        <h2>What Clients Say</h2>
+        <p>Direct feedback from the businesses I've worked with.</p>
+    </div>
+    <div class="t-grid">
+        <div class="t-card">
+            <div class="stars">★★★★★</div>
+            <p>"Our Instagram actually looks like a brand now, not a hobby account. Bookings went up within the first month."</p>
+            <div class="t-who">
+                <div class="avatar">R</div>
+                <div><div class="name">Business Owner</div><div class="role">Cafe & Bakery, 3 locations</div></div>
+            </div>
+        </div>
+        <div class="t-card">
+            <div class="stars">★★★★★</div>
+            <p>"We went from not showing up on Google at all to ranking for the exact terms our customers search for."</p>
+            <div class="t-who">
+                <div class="avatar">S</div>
+                <div><div class="name">Store Manager</div><div class="role">Independent Retailer</div></div>
+            </div>
+        </div>
+        <div class="t-card">
+            <div class="stars">★★★★★</div>
+            <p>"The whole process was fast and clear. The new website paid for itself in the first two weeks of leads."</p>
+            <div class="t-who">
+                <div class="avatar">A</div>
+                <div><div class="name">Founder</div><div class="role">Home Services Business</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Let's build your next case study</h2>
+    <p>Tell me about your business and where you want growth to come from.</p>
+    <a href="index.html#contact" class="btn">Start a Project</a>
+    <a href="services.html" class="btn-outline">See Services</a>
+</section>
+
+<footer>
+    <p>© 2026 MZ CREATIONS. All Rights Reserved. · Digital Marketing · SEO · Websites · Content Creation</p>
+</footer>
+
+<script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            cards.forEach(card => {
+                card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'flex' : 'none';
+            });
+        });
+    });
+</script>
+
+</body>
+</html><nav>
+    <div class="logo">
+        MZ <span>CREATIONS</span>
+    </div>
+
+   
